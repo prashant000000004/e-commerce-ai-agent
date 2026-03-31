@@ -1,0 +1,12 @@
+.env
+__pycache__/
+*.pyc
+*.pkl
+*.db
+mlruns/
+models/saved/
+data/raw/
+data/processed/
+.DS_Store
+venv/
+.venv/

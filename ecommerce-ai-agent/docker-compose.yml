@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    ports:
+      - "8501:8501"    # Streamlit dashboard
+    volumes:
+      - .:/app         # Mount project so changes are reflected without rebuild
+    env_file:
+      - .env           # Loads HF_TOKEN and other vars from your .env file
+    environment:
+      - DATABASE_URL=sqlite:///./ecommerce.db
+      - MLFLOW_TRACKING_URI=./mlruns
+      - MODEL_DIR=./models/saved
